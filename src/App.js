@@ -30,8 +30,10 @@ function App() {
     if (response.status !== 204) {
       console.log("Não foi possível exluir o repositório");
     }
+
+    const repositoriesToList = repositories.filter(repository => repository.id !== id);
     
-    setRepositories([]);
+    setRepositories(repositoriesToList);
   }
 
   return (
